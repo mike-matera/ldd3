@@ -8,7 +8,7 @@ else
   DEBFLAGS = -O2
 endif
 
-EXTRA_CFLAGS += $(DEBFLAGS) -I$(LDDINCDIR)
+EXTRA_CFLAGS += $(DEBFLAGS) -I$(LDDINCDIR) -fno-pie
 
 ifneq ($(KERNELRELEASE),)
 # call from kernel build system

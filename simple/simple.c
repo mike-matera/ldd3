@@ -90,6 +90,7 @@ static int simple_remap_mmap(struct file *filp, struct vm_area_struct *vma)
 /*
  * The nopage version.
  */
+/*
 static int simple_vma_nopage(struct vm_area_struct *vma, struct vm_fault *vmf)
 {
 	struct page *pageptr;
@@ -111,11 +112,12 @@ static int simple_vma_nopage(struct vm_area_struct *vma, struct vm_fault *vmf)
 
 	return 0;
 }
+*/
 
 static struct vm_operations_struct simple_nopage_vm_ops = {
 	.open =   simple_vma_open,
 	.close =  simple_vma_close,
-	.fault = simple_vma_nopage,
+	//.fault = simple_vma_nopage,
 };
 
 static int simple_nopage_mmap(struct file *filp, struct vm_area_struct *vma)
